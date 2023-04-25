@@ -17,19 +17,31 @@ def count_inversions_unique():
     for i in range(len(i)):
         if i - nums[i] > 1 or i - nums[i] < -1: return False
         return True
+#says if global inversions == local inversion
+
+# note for the below soln all integers in the arr must unique
+
+def inversions():
+    inv = 0
+    for i in range(len(nums)):
+        if nums[i] - i> 1:
+            inv += nums[i] - i
+    print(inv)
+    #pass 216/226 testcases but bit buggy. 
+
+#inversions()
     
 #count inversions normal - O(nlogn)
-nums = [12,11,13,5,6,7]
+nums = [1,2,0,3]
 ans = 0
 def merge_sort(arr):
     global ans
-    k = 0
     if len(arr) > 1:
         mid_idx = len(arr)//2
 
         L = merge_sort(arr[:mid_idx])
         R = merge_sort(arr[mid_idx:])
-        i = 0; j = 0
+        i = 0; j = 0; k = 0
         while i < len(L) and j < len(R):
             if R[j] < L[i]:
                 arr[k] = R[j]
@@ -48,7 +60,7 @@ def merge_sort(arr):
         return arr
 
 
-merge_sort(nums)
+print(merge_sort(nums))
 print(ans)
 
     

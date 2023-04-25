@@ -6,7 +6,7 @@
 # Input:  arr[] = {-5, -2, 5, 2, 4, 7, 1, 8, 0, -8}
 # Output: arr[] = {-5, 5, -2, 2, -8, 4, 7, 1, 8, 0}
 
-nums = [-5, -2, 5, 2, 4, 7, 1, 8, 0, -8]
+arr = nums = [-5, -2, 5, 2, 4, 7, 1, 8, 0, -8]
 def find_next_neg(start_idx):
     for i in range(start_idx+1, len(nums)):
         if nums[i] < 0:
@@ -38,6 +38,25 @@ def alt_neg_pos():
         if end_idx != -1:
             cyclically_rotate_arr(i,end_idx)
             end_idx = -1
+
+def rearr():
+    outofPlace = -1
+    print(arr)
+    i = 0
+    while i < len(arr):
+        if outofPlace != -1:
+            if (arr[outofPlace] < 0 and arr[i] > 0) or (arr[outofPlace] > 0 and arr[i] < 0):
+                print(outofPlace, i)
+                cyclically_rotate_arr(outofPlace, i)
+                outofPlace = -1; i-= 1
+
+        else:
+            if (arr[i] < 0 and i % 2 == 0) or (arr[i] > 0  and i % 2 != 0):
+                outofPlace = i
+        i += 1
+    print(arr)
+
+rearr()
 
 
             

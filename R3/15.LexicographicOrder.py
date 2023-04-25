@@ -10,7 +10,7 @@
 
 # The replacement must be in place and use only constant extra memory.
 
-nums = [1, 2, 3, 6, 5, 4]
+nums = [1, 2, 4, 3, 5]
 
 def next_permutation(nums):
     n = len(nums)

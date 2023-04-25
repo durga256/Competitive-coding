@@ -3,24 +3,35 @@
 # The task is to find the minimum number of jumps to reach the
 # end of the array starting from index 0. If the end isn’t reachable, 
 # return -1.
-arr = [3,1,1,1,1]
+nums = [2,2,0,0,4]
 
 def min_jumps_to_end():
-    n = len(arr)
-    arr[n-1] = 0
-    for i in range(n-2, -1,-1):
-        if arr[i] >= n - i + 1:
-            arr[i] = 1
+    n = len(nums)
+    nums[n-1] = 0
+    for i in range(n-2,-1,-1):
+        if nums[i] >= n-1-i:
+            nums[i] = 1
         else:
-            temp_min = 10001
-            for k in range(arr[i]):
-                if i+k+1 < n and arr[i+k+1] < temp_min and arr[i+k+1] >= 0:
-                    temp_min = arr[i+k+1]
-            if arr[i] <= 0:
-                arr[i] = -1
-            else:
-                arr[i] = temp_min + 1
+            min_sofar = nums[i+1]
+            for j in range(1,nums[i]+1):
+                min_sofar = min(min_sofar, nums[i+j])
+            nums[i] = min_sofar + 1
 
-min_jumps_to_end()
-print(arr)
+    print(nums)
+
+#min_jumps_to_end()
+
+def opt():
+    cur_end = 0; cur_max = 0; ans = 0
+    for i in range(len(nums)-1):
+        cur_max = max(cur_max, nums[i]+i)
+
+
+        if i == cur_end:
+            ans += 1
+            cur_end = cur_max
+    
+    print(ans)
+
+opt()
 
