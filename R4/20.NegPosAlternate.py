@@ -24,7 +24,7 @@ def cyclically_rotate_arr(start_idx, end_idx):
     for i in range(end_idx, start_idx, -1):
         nums[i] = nums[i-1]
     nums[start_idx] = temp
-    print(nums)
+    #print(nums)
 
 def alt_neg_pos():
     #we know negs are at even indexes
@@ -46,7 +46,7 @@ def rearr():
     while i < len(arr):
         if outofPlace != -1:
             if (arr[outofPlace] < 0 and arr[i] > 0) or (arr[outofPlace] > 0 and arr[i] < 0):
-                print(outofPlace, i)
+                #print(outofPlace, i)
                 cyclically_rotate_arr(outofPlace, i)
                 outofPlace = -1; i-= 1
 

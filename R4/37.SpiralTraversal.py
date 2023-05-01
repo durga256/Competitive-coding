@@ -15,12 +15,12 @@ def spiral():
         right -= 1
         
         if top < bottom:
-            for i in range(right-1, left, -1):
+            for i in range(right-1, left-1, -1):
                 print(matrix[bottom-1][i], end = " ")
             bottom -= 1
 
         if left < right:
-            for i in range(bottom, top-1, -1):
+            for i in range(bottom-1, top-1, -1):
                 print(matrix[i][left], end = " ")
             left += 1
 
