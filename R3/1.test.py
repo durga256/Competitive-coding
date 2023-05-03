@@ -1,30 +1,31 @@
-P = 12222333
-#P = 1234
+haystack = "WELCOMETOSURANACOLLEGE"
+needle = "SURANA"
 
-def next():
-    n = str(P)
-    n = list(n)
-    pivot_idx = -1
-    for i in range(len(n)-1,0,-1):
-        if n[i] > n[i-1]:
-            pivot_idx = i - 1
-            break
+def find():
+    #make bad match table
+    d = {}; m = len(needle)
+    for i in range(len(needle)):
+        d[needle[i]] = m - i - 1
 
-    if pivot_idx == -1:
-        return pivot_idx
-    
-    min_index = pivot_idx + 1
-    for i in range(pivot_idx+2, len(n)):
-        if n[i] > n[pivot_idx] and n[i] <= n[min_index]:
-            min_index = i
+    d['*'] = m
+    d[needle[m-1]] = m
 
-    n[pivot_idx], n[min_index] = n[min_index], n[pivot_idx]
+    print(d)
 
-    n[pivot_idx+1:] = reversed(n[pivot_idx+1:])
-    res = ""
-    for i in n:
-        res += i
-    print(res)
-    print(int(res))
-
-next()
+    tempm = m; i = 0
+    while i + tempm - 1 < len(haystack) and tempm > 0:
+        if haystack[i+tempm-1] == needle[tempm - 1]:
+            tempm -= 1
+        else:
+            if haystack[i+m-1] in d.keys():
+                i += d[haystack[i+m-1]]
+            else:
+                i += d['*']
+            tempm = m
+        
+    if tempm:
+        print('-1')
+    else:
+        print(i)
+        return
+find()

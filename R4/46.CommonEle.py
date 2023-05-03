@@ -10,15 +10,15 @@ def common():
     for i in range(len(mat)):
         for j in range(n):
             if mat[i][j] not in d.keys():
-                d[mat[i][j]] = set()
-                d[mat[i][j]].add(i)
-            else:
-                d[mat[i][j]].add(i)
+                d[mat[i][j]] = 1
+            elif d[mat[i][j]] == i:
+                d[mat[i][j]] += 1
+                
 
     print(d)
 
     for i in d.keys():
-        if len(d[i]) == n-1:
+        if d[i] == n-1:
             print(i)
 
 

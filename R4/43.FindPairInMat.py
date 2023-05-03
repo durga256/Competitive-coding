@@ -12,7 +12,7 @@ mat = [[-1,-2,-3],
        [-4,-5,-6],
        [-7,-8,-9]]
 
-mat = [[1,5], [4,2]]
+# mat = [[1,5], [4,2]]
 
 def find():
     maxArr = [[-sys.maxsize - 1 for i in range(len(mat[0]))] for i in range(len(mat))]
