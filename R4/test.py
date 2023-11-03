@@ -1,29 +1,41 @@
-mat = [[0, 0, 0, 1],
-       [0, 0, 0, 1],
-       [0, 0, 0, 1],
-       [0, 0, 0, 0]]
+A = [[0, 1, 1, 0],
+         [1, 1, 1, 1],
+         [1, 1, 1, 1],
+         [1, 1, 0, 0]]
 
 
-def f(arr, low, high):
-    if low > high: return -1
-    mid = (high-low)//2+low
+def max_area_histogram(arr):
+    stack = []
+    res = 0
+    for i in range(len(arr)):
+        popped_idx = i
+        if stack and stack[-1][1] > arr[i]:
+            while stack and stack[-1][1] > arr[i]:
+                temp = stack.pop()
+                popped_idx = temp[0]
+                res = max(res,temp[1]*(i-popped_idx)) 
+        stack.append([popped_idx, arr[i]])
 
-    if (mid ==0 or arr[mid-1] == 0) and arr[mid] == 1:
-        return mid
-    if arr[mid] == 0:
-        return f(arr,mid+1, high)
-    else:
-        return f(arr,low,mid-1)
-    
-        
-def f2():
-    max_len = 0
-    m = len(mat[0])
-    for i in range(len(mat)):
-        temp = f(mat[i],0,m-1)
-        if temp != -1:
-            max_len = max(max_len, m-temp)
+    while stack:
+        temp = stack.pop()
+        popped_idx = temp[0]
+        res = max(res,temp[1]*(len(arr)-popped_idx)) 
 
-    print(max_len)
+    return res
 
-f2()
+def f():
+    n = len(A)
+    m = len(A[0])
+
+    for i in range(1,n):
+        for j in range(m):
+            if A[i][j] != 0:
+                A[i][j] += A[i-1][j]
+
+    for i in range(n):
+        temp = max_area_histogram(A[i])
+        print(temp)
+
+    print(A)
+
+f()

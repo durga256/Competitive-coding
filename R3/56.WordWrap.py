@@ -19,10 +19,10 @@ def f(words, n, wordIndex, length, remLength):
 
     if current_word_length < remLength:
         if remLength == length:
-            return f(words, n, wordIndex+1, length, remLength-current_word_length if remLength==length else remLength-current_word_length-1)
+            return f(words, n, wordIndex+1, length, remLength-current_word_length)
         else:
             temp_min =  min(
-                f(words, n, wordIndex+1, length, remLength-current_word_length if remLength==length else remLength-current_word_length-1),
+                f(words, n, wordIndex+1, length, remLength-current_word_length-1),
                 cost(remLength)+f(words, n, wordIndex, length, length)
             )
             print("temp_min", temp_min)

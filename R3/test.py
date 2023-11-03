@@ -1,20 +1,26 @@
-def integer_to_say(n):
-    c = n[0]; count = 1; res = ""
-    for i in range(1,len(n)):
-        if n[i] != c:
-            res += str(count) + c
-            count = 1
-            c = n[i]
-        else:
-            count += 1
+dictionary = [ "mobile", "samsung", "sam", "sung", "man", "mango", "icecream", "and", "go", "i", "like", "ice", "cream" ]
+word = 'ilikesamsung'
+def get_dict(words):
+    d = set()
+    for i in words:
+        d.add(i)
 
-    res += str(count) + c
-    return res
+    return d
 
-def count_n_say():
-    n = "1"; 
-    for i in range(6):
-        n = integer_to_say(n)
-        print(n)
+def f():
+    d = get_dict(dictionary)
 
-count_n_say()
+    dp = [False]*(len(word)+1)
+    dp[0] = True
+
+    for i in range(len(word)+1):
+        for j in range(i):
+            if dp[j] and word[j:i] in d:
+                dp[i] = True
+                break
+
+    print(dp)
+    return dp[len(word)]
+
+print(f())
+
