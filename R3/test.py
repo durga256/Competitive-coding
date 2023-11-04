@@ -23,4 +23,3 @@ def f():
     return dp[len(word)]
 
 print(f())
-

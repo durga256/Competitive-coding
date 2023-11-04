@@ -1,41 +1,18 @@
-A = [[0, 1, 1, 0],
-         [1, 1, 1, 1],
-         [1, 1, 1, 1],
-         [1, 1, 0, 0]]
-
-
-def max_area_histogram(arr):
-    stack = []
-    res = 0
-    for i in range(len(arr)):
-        popped_idx = i
-        if stack and stack[-1][1] > arr[i]:
-            while stack and stack[-1][1] > arr[i]:
-                temp = stack.pop()
-                popped_idx = temp[0]
-                res = max(res,temp[1]*(i-popped_idx)) 
-        stack.append([popped_idx, arr[i]])
-
-    while stack:
-        temp = stack.pop()
-        popped_idx = temp[0]
-        res = max(res,temp[1]*(len(arr)-popped_idx)) 
-
-    return res
-
+d = {
+        'A': 2,        'B': 22,        'C': 222,        'D': 3,        
+        'E': 33,       'F': 333,        'G': 4,        'H': 44,
+        'I': 444,        'J': 5,        'K': 55,        'L': 555,
+        'M': 6,        'N': 66,        'O': 666,        'P': 7,
+        'Q': 77,        'R': 777,        'S': 7777,        'T': 8,
+        'U': 88,        'V': 888,        'W': 9,        'X': 99,
+        'Y': 999,        'Z': 9999
+    }
+input = "GEEKSFORGEEKS"
 def f():
-    n = len(A)
-    m = len(A[0])
+    res = ''
+    for i in input:
+        res += str(d[i])
 
-    for i in range(1,n):
-        for j in range(m):
-            if A[i][j] != 0:
-                A[i][j] += A[i-1][j]
-
-    for i in range(n):
-        temp = max_area_histogram(A[i])
-        print(temp)
-
-    print(A)
+    print(res)
 
 f()
