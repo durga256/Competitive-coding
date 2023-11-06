@@ -1,26 +1,25 @@
-arr = [12, 11, 13, 5, 6, 7]
-arr = [1, 20, 6, 4, 5]
+nums = [3,1,-2,-5,2,-4]
+nums = [-1,1]
+nums = [28,-41,22,-8,-37,46,35,-9,18,-6,19,-26,-37,-10,-9,15,14,31]
 
-def count(arr, count_inversion):
-    if len(arr) > 1:
-        mid = len(arr)//2
+def f():
+    print(nums); i = 0
+    low_pos = 0; low_neg = 1
+    while i < len(nums):
+        if i%2 == 0:
+            if nums[i] > 0:
+                low_pos += 2
+            elif nums[i] < 0 and low_neg < len(nums):
+                nums[i], nums[low_neg] = nums[low_neg], nums[i]
+                low_neg += 2; i -= 1
+        if i%2 != 0:
+            if nums[i] < 0:
+                low_neg += 2
+            elif nums[i] > 0 and low_pos < len(nums):
+                nums[i], nums[low_pos] = nums[low_pos], nums[i]
+                low_pos += 2; i -= 1
+        i += 1
 
-        L = arr[:mid]
-        R = arr[mid:]
+    print(nums)
 
-        count_inversion += count(L, count_inversion)
-        count_inversion += count(R, count_inversion)
-
-        i = j = k = 0
-        while i < len(L) and j < len(R):
-            if L[i] <= R[j]:
-                arr[k] = L[i]
-                i += 1
-            else:
-                count_inversion += len(L) - i
-                arr[k] = R[j]
-                j+=1
-            k += 1
-    return count_inversion
-
-print(count(arr, 0))
+f()
