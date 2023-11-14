@@ -30,7 +30,7 @@ def findPivot(self,arr,l,h):
 
 def f():
     n = len(arr); 
-    pivot_idx = findPivot(A,)
+    pivot_idx = findPivot(arr,0,len(arr)-1)
     
     print(pivot_idx)
     if arr[0] > key:

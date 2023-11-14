@@ -10,3 +10,5 @@ def zeroSumSubArr():
         d[curr_sum] = 1
         
     return False
+
+print(zeroSumSubArr())

@@ -1,15 +1,25 @@
-arr = [12, 11, 13, 5, 6]
-arr = [6,1,2,4]
+arr = [10, 7, 8, 9, 1, 5]
 
-def f():
-    for i in range(len(arr)):
-        key = arr[i]
-        j = i-1
-        while j>= 0 and arr[j] > key:
-            arr[j+1] = arr[j]
-            j -= 1
-        arr[j+1] = key
+def partition(arr, low, high):
+    pivot = arr[high]
 
+    j = low
+    while j <= high:
+        if arr[j] < pivot:
+            arr[low], arr[j] = arr[j], arr[low]
+            low += 1
+        elif arr[j] > pivot:
+            arr[high], arr[j] = arr[j], arr[high]
+            high -= 1; j-= 1
+        j += 1
     print(arr)
+    return low
 
-f()
+def f(arr,low,high):
+    if low < high:
+        pi = partition(arr, low, high)
+        f(arr, low, pi-1)
+        f(arr, pi+1, high)
+
+f(arr,0,len(arr)-1)
+print(arr)

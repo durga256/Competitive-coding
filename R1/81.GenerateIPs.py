@@ -10,7 +10,7 @@ def solve(s,i,j,level,temp):
     while k < i + 3 and k <= j:
         ad = s[i:k+1]
 
-        if ((s[i]==0 and len(ad) > 1) or int(ad) > 255):
+        if ((s[i]==0 and len(ad) > 1) or int(ad) > 255 or (ad[0] == '0' and len(ad) > 1)):
             return
         
         solve(s,k+1,j,level + 1, temp+'.'+ad)
