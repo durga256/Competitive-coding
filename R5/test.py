@@ -1,31 +1,41 @@
-ar1 = [1, 12, 15, 26, 38]
-ar2 = [2, 13, 17, 30, 45]
+import sys
+sys.stdout = open('CodeForces/output.txt', 'w')
 
-def f(ar1, ar2):
-    n = len(ar1); m = len(ar2)
-    if n > m:
-        return f(ar2,ar1)
-    
-    start = 0
-    end = n
-    real_arr_mid_idx = (n+m+1)//2
-    while start  <= end:
-        mid = (start + end)//2
-        leftAsize = mid
-        leftBSize = real_arr_mid_idx - mid
+import heapq
 
-        leftA = ar1[leftAsize - 1] if leftAsize > 0 else float('-inf')
-        leftB = ar2[leftBSize - 1] if leftBSize > 0 else float('-inf')
-        rightA = ar1[leftAsize] if leftAsize < n else float('inf')
-        rightB = ar2[leftBSize] if leftBSize < m else float('inf')
+matrix2 = [[1, 3, 4],
+           [2, 5, 6],
+           [7, 8, 9]]
 
-        if leftA <= rightB and leftB <= rightA:
-            if (m+n) %2 == 0:
-                return (max(leftA, leftB)+min(rightA, rightB))/2
-            return max(leftA, leftB)
-        elif leftA  > rightB:
-            end = mid -1
-        else:
-            start = mid + 1
+class Node:
+    def __init__(self, data, r, c) -> None:
+        self.data = data
+        self.r = r
+        self.c = c
+    def __lt__(self, other):
+        return self.data < other.data
+def f(mat):
+    minheap = []; n = len(mat); m = len(mat[0])
 
-print(f(ar1, ar2))
+    for i in range(n):
+        temp = Node(mat[i][0], i, 0)
+        heapq.heappush(minheap, temp)
+
+    count = 0
+    median_count = (n*m)//2
+    print(median_count)
+
+    while count <= median_count:
+        popped = heapq.heappop(minheap)
+
+        if popped.c+1 < m:
+            temp = Node(mat[popped.r][popped.c+1], popped.r, popped.c+1)
+            heapq.heappush(minheap, temp)
+        print(popped.data, count)
+        count += 1
+        
+
+    print(popped.data)
+
+f(matrix2)
+
