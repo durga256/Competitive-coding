@@ -1,10 +1,12 @@
 #no.of operations to make unbalanced brackets balanced
 exp = "}{{}}{{{"
+#exp = "{{}{{{}{{}}{{"
+exp = "}{}}}}{{}{}}{}{}{{{{}{}}{}}}{{}}}}}}{"
 
 def f():
     temp = 0; res = 0
-    for i in range(len(exp)):
-        if exp[i] == '{':
+    for i in exp:
+        if i == '{':
             temp += 1
         else:
             if temp == 0:
@@ -13,7 +15,10 @@ def f():
             else:
                 temp -= 1
 
-    if temp:
+    print(res, temp)
+    if temp % 2 != 0:
+        return -1
+    if temp != 0:
         res += temp //2
 
     print(res)

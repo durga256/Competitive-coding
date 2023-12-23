@@ -1,14 +1,27 @@
-haystack = "sadbutsad"; needle = "sad"
+#no.of operations to make unbalanced brackets balanced
+exp = "}{{}}{{{"
+#exp = "{{}{{{}{{}}{{"
+exp = "}{}}}}{{}{}}{}{}{{{{}{}}{}}}{{}}}}}}{"
 
-def RabinKarp(haystack, needle):
-    needle_len = len(needle)
-    needle_hash = 0
-    for i in range(len(needle)):
-        needle_hash += (ord(needle[i])-96)*(2**(needle_len-i-1))
+def f():
+    temp = 0; res = 0
+    for i in exp:
+        if i == '{':
+            temp += 1
+        else:
+            if temp == 0:
+                res += 1
+                temp += 1
+            else:
+                temp -= 1
 
-    haystack_hash = 0
-    for i in range(needle_len):
-        haystack_hash += (ord(haystack[i])-96)*(2**(needle_len-i-1))
+    print(res, temp)
+    if temp % 2 != 0:
+        return -1
+    if temp != 0:
+        res += temp //2
 
-    for i in range(len(haystack)-needle_len):
-        
+    print(res)
+
+
+f()
