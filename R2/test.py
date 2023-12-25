@@ -1,27 +1,32 @@
-#no.of operations to make unbalanced brackets balanced
-exp = "}{{}}{{{"
-#exp = "{{}{{{}{{}}{{"
-exp = "}{}}}}{{}{}}{}{}{{{{}{}}{}}}{{}}}}}}{"
+haystack = 'WELCOMETOSURANACOLLEGE'
+needle = 'SURANA'
 
 def f():
-    temp = 0; res = 0
-    for i in exp:
-        if i == '{':
-            temp += 1
+    len_needle = len(needle)
+    bad_match_table = {}
+    
+    for i in range(len_needle):
+        bad_match_table[needle[i]] = len_needle-i-1
+
+    bad_match_table['*'] = len_needle
+    bad_match_table[needle[-1]] = len_needle
+
+    print(bad_match_table)
+    i = j = start = len_needle-1
+    while i < len(haystack):
+        if needle[j] == haystack[i]:
+            i -= 1; j -= 1
         else:
-            if temp == 0:
-                res += 1
-                temp += 1
+            if haystack[start] in bad_match_table:
+                start += bad_match_table[haystack[start]]
             else:
-                temp -= 1
-
-    print(res, temp)
-    if temp % 2 != 0:
-        return -1
-    if temp != 0:
-        res += temp //2
-
-    print(res)
-
-
+                start += bad_match_table['*']
+            i = start
+            j = len_needle-1
+        if j == 0:
+            print(i)
+    
+    if j == 0:
+        print(i)
+        
 f()
