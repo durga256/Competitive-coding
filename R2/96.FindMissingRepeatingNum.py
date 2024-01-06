@@ -22,4 +22,13 @@ def f():
 
 f()
 
+def f2():
+    n = len(arr)
+    sum_of_arr = sum(arr)
+    repeating = sum_of_arr-sum(set(arr))
+    missing = n*(n+1)//2 - sum_of_arr + repeating
+    print(repeating, missing)
+
+f2()
+
     

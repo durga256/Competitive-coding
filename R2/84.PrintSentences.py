@@ -19,7 +19,7 @@ def f(arr,m,n,output):
 
     
 def f2():
-    # Create an array to store sentence
+    # Create an array to store sentence - max length of any sentence = R words
     output = [""] * R
     for i in range(C):
         if arr[0][i] != "":

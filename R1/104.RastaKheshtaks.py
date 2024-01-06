@@ -2,99 +2,43 @@ import sys
 sys.stdin = open('CodeForces/input.txt', 'r')
 sys.stdout = open('CodeForces/output.txt', 'w')
 
-def getInput():
-    N , M = input().split()
-    arr = []
-    for i in range(int(N)):
-        temp = [int(x) for x in input().split()]
-        arr.append(temp)
-    X, Y = input().split()
-    arr2 = []
-    for i in range(int(X)):
-        temp = [int(x) for x in input().split()]
-        arr2.append(temp)
+from collections import defaultdict
+from sys import stdin
  
-    return (arr, arr2)
- 
-def find_hash(arr, col1, col2, row):
-    if col1 >= len(arr[0]) or col2 >= len(arr[0]) or col1 == col2:
-        return 0
-    hashCol = []
-    add = 0
-    radix = 256
-    end_row = row+(col2-col1)
-    
-    if end_row >= len(arr):
-        return 0
-    
-    for i in range(col1, col2+1):
-        for j in range(row, end_row+1):
-            add = add + (radix**(row-j-1) *
-                         arr[j][i])% 101
-        hashCol.append(add % 101)
-        add = 0
-    return hashCol
- 
-def f():
-    arr1, arr2 = getInput()
-    dp1 = []; dp2 = []
-    # for i in range(len(arr1[0])+1):
-    #     temp = []
-    #     for j in range(len(arr1[0])+1):
-    #         temp.append([])
-    #     dp1.append(temp)
-    # for i in range(len(arr2[0])+1):
-    #     temp = []
-    #     for j in range(len(arr2[0])+1):
-    #         temp.append([])
-    #     dp2.append(temp)
- 
-    for i in range(len(arr1)):
-        j = 0
-        while j < len(arr1[0]):
-            for k in range(j,len(arr1[0])):
-                temp = find_hash(arr1, j, k, i)
-                if temp != 0 and len(temp) > 1:
-                    dp1.append(temp)
-            j += 1
- 
-    # for i in range(len(dp1)):
-    #     print(dp1[i])
- 
-    dp1.sort()
- 
-    for i in range(len(arr2)):
-        j = 0
-        while j < len(arr2[0]):
-            for k in range(j,len(arr2[0])):
-                temp = find_hash(arr2, j, k, i)
-                if temp != 0 and len(temp) > 1:
-                    dp2.append(temp)
-            j += 1
- 
-    dp2.sort()
-    # for i in range(len(dp2)):
-    #     print(dp2[i])
- 
-    i = 0; j = 0; res = 0; flag = True
-    while i < len(dp1) and j < len(dp2):
-        if dp1[i][0] == dp2[j][0] and len(dp1[i]) == len(dp2[j]):
-            # for k in range(len(dp1[i])):
-            #     if dp1[i][k] != dp2[j][k]:
-            #         flag = False
-            #         if dp1[i][k] < dp2[j][k]:
-            #             i += 1
-            #         else:
-            #             j += 1
-            #         break
-            # if flag:
-                res = max(res, len(dp1[i]))
-                i += 1; j += 1            
-        elif dp1[i][0] < dp2[j][0]:
-            i += 1
-        else:
-            j += 1
- 
-    print(res)
- 
-f()
+n, m = map(int, stdin.readline().strip().split())
+a = []
+for _ in range(n):
+    a.append(list(map(int, stdin.readline().strip().split())))
+x, y = map(int, stdin.readline().strip().split())
+b = []
+for _ in range(x):
+    b.append(list(map(int, stdin.readline().strip().split())))
+if a == b:
+    print(n)
+else:
+    cells = defaultdict(list)
+    x1 = 1000
+    x2 = 1000000
+    x3 = 1000000000
+    for i in range(n - 1):
+        for j in range(m - 1):
+            row1 = a[i]
+            row2 = a[i + 1]
+            k = row1[j] * x3 + row1[j + 1] * x2 + row2[j] * x1 + row2[j + 1]
+            cells[k].append((i, j))
+    dp = [[0] * m for _ in range(n)]
+    for i in range(x - 1):
+        for j in range(y - 1):
+            row1 = b[i]
+            row2 = b[i + 1]
+            k = row1[j] * x3 + row1[j + 1] * x2 + row2[j] * x1 + row2[j + 1]
+            if k in cells:
+                for u, v in cells[k]:
+                    dp[u][v] = 1
+    ans = 0
+    for i in range(1, n):
+        for j in range(1, m):
+            if dp[i][j]:
+                dp[i][j] = 1 + min(dp[i][j - 1], dp[i - 1][j - 1], dp[i - 1][j])
+                ans = max(ans, dp[i][j])
+    print(ans + 1)

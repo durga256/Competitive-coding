@@ -17,7 +17,11 @@ class Solution:
         # print(r)
 
         x = (r-c)/(a-p)
-        y = ((a+p)*x + c+ r)/(b+q)
+        #y = ((a+p)*x + c+ r)/(b+q)
+        y = a*x+c
+        # print(p,b,a,q)
+        # x  = ((-r*b)-(c*q))/(p*b+a*q)
+        # y = (p*x+r)/q
         return [x, y]
 
     def findOptimumCost(self, line, n, points):
@@ -29,7 +33,7 @@ class Solution:
 
         min_x = min_y = sys.maxsize
         max_x = max_y = -sys.maxsize
-
+        print(res)
         for i in res:
             min_x = min(min_x, i[0])
             max_x = max(max_x, i[0])
@@ -37,7 +41,8 @@ class Solution:
             max_y = max(max_y, i[1])
 
         slope_positive_flag = False
-
+        print('mid point', (min_x+max_x)/2, (min_y+max_y)/2)
+        print('eqn satisfy',self.a*((min_x+max_x)/2)+self.b*((min_y+max_y)/2)+self.c)
         if -1*self.a/self.b > 0:
             slope_positive_flag = True
 
@@ -46,17 +51,27 @@ class Solution:
         else:
             i = max_x; j = min_y
         lengths_arr = []
+        min_so_far = 100000000
         while i <= max_x and j <= max_y:
             total_len = 0
             for k in points:
                 temp = self.findLength2Points(i,j, k[0], k[1])
                 total_len += temp
             lengths_arr.append(total_len)
+            if total_len < min_so_far:
+                min_so_far = total_len
+                ans = [i,j]
             if slope_positive_flag:
-                i += 1; j += 1
+                i += 0.1; j = (-self.c-self.a*i)/self.b
             else:
-                i -= 1; j += 1
-
+                i -= 0.1; j = (-self.c-self.a*i)/self.b
+        print(lengths_arr)
+        print(ans)
+        # temp = 0
+        # for k in points:
+        #     temp += self.findLength2Points((min_x+max_x)/2,(min_y+max_y)/2, k[0], k[1])
+        # print('Distance from mid pt', temp)
+        # return temp
         return round(min(lengths_arr),2)
             
     def findLength2Points(self,x1,y1,x2,y2):
@@ -72,8 +87,21 @@ points = [[-3, -2], [-1, 0],
 # line = [2,1,4]
 # points = [[-1, 2], [1, 3],[2, 4]]
 
-line = [3,4,4]
-points = [[-1, 4], [-1, 0]]
+# line = [3,4,4]
+# points = [[-1, 4], [-1, 0]]
+
+# line = [3,2,5]
+# points = [[1,-1],[2,3],[4,4],[5,-1],[3,2]]
+
+# line = [3,1,-4]
+# points = [[1,2],[4,-2],[5,-3],[7,-6]]
+
+# line = [-1,2,-4]
+# points = [[-2,1],[2,3],[0,2],[-4,0]]
+
+line = [2,-5,4]
+points = [[2,1],[7,-9],[4,-3],[-5,2],[8,-6]]
+
 
 print(n.findOptimumCost(line, len(points), points))
 

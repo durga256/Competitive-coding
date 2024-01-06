@@ -32,6 +32,7 @@ def f2(n,s):
             if d[s[i]] == 2:
                 occupied -= 1
             d[s[i]] == 0
+        print(d)
 
     print(res)
 

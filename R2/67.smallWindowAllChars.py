@@ -1,3 +1,4 @@
+from collections import Counter
 s = 'aabcbcdbca'
 def f():
     distinct = len(set(str))
@@ -18,7 +19,7 @@ def f():
 
     return ans
 
-f()
+#f()
 
 # https://leetcode.com/problems/minimum-window-substring/
 
@@ -70,11 +71,14 @@ def f():
         print(res)
         print(s[res[0]:res[1]+1])
 
-f()
+#f()
 
 #Elegant solution
 
-def minWindow(self, s: str, t: str) -> str:
+t = 'oduc'
+s = 'icgdwxapjoqrnvsovofwibnztdakxnxyvqp'
+
+def minWindow(s: str, t: str) -> str:
     if len(s) < len(t): return ''
     
     need, match, l, start, windowLen = Counter(t), 0, 0, 0, len(s) + 1
@@ -93,5 +97,9 @@ def minWindow(self, s: str, t: str) -> str:
             if removeCh in need:
                 match -= need[removeCh] == 0
                 need[removeCh] += 1
+    temp = s[start:start + windowLen]
+    if windowLen <= len(s) and temp:
+        return temp
+    return ''
 
-    return s[start:start + windowLen] if windowLen <= len(s) else ''
+print(minWindow(s,t))

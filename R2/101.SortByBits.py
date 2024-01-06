@@ -1,5 +1,10 @@
 arr = [5, 2, 3, 9, 4, 6, 7, 15, 32]
 
+def f2():
+    arr.sort(key= lambda x:-bin(x)[2:].count('1'))
+    print(arr)
+f2()
+
 def f():
     count_arr = []
     for i in range(21):

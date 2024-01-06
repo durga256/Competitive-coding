@@ -1,13 +1,5 @@
-11 19
-nolllmlmomlokknlknl
-mlllnnonkoonlnommll
-molkklkkkllmmlloolo
-omllnmmmnnolllmooom
-klmmolonommknmoonkn
-nomlnnlkonnnkkokkmk
-kmommloooknklmnklko
-oklonlnnmlmlnnkloml
-mmkoomnonlkmllmllnm
-knomnlmlkknlomkkoml
-nklkllolomoomklnmmo
-ln
+2
+1 4
+6 8
+2
+2 6 10
