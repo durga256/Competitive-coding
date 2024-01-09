@@ -1,40 +1,37 @@
-arr = [5, 6, 7, 8, 9, 10, 1, 2, 3]; key = 3
-
+T = 'rzttvarhmbwrghefxpdapbyimwmbarytssooufvgjtzrbeyyvcymfzvtvjvycttvnilhpgqabpsevqdruddzeatalqaojtlxbwgrewrfmjkhcpawugwzgrbshbisutrwpyptugagskquzsswyqxfhyzqbjjvcatryimtrmbjxtfymzwkqtrzrsqsbzqdzjwaukvnxywwsdwgctqumkugekaglqlmckmyujltijpaoogshynvkjbpvexgwkuauhyrqlkawcakqidxjsutdwkycheysyzohzfansajudwknbjwvdqybawfkceccfsmgaovsqfotdyjejfzoxxsavxkxdozignrgbmastonwowaxebobygbtflsjzutihmqjzrdufqrwptvtvjuvryrxjjilddvnqlyreblmtciiyddtnaqgyhfjrnwwrrljfjajmnvgqfqqjujywzeujmdczaystkdavdmirjojpgzyckyylesuqywqaxktjowetimmrcxgjwgliekuleqbcntcmgyvuubpcoctszcbykpgpbccftdiizmufkpzgqqkgsgzuicssrajudlawrkeqwyvjpwrhmcohipbsttkntwhwjhuatysqynbplsxyunfeegwxbjkwfsvqbprvolnoboemibkfqrjuzgrapcxwwsmxjfszrhosvsgevrlnkuhkaykrcjpadcynjsmcacwxwddtwoggjnqlodfsoutsythknvmnyjnuoqokhuqskjdyoksehlyfefpsbehbnwxdpnnwifouqtsgemlnyjsepkysoivdesgtgvrqafktbezhqkuquovlyvfodatisbdayvqzacudgtkzeepatmltiqklsdvmhznfudgwiacoumparfcmrphzfrnzxilejylfesemugcqssslxuzqjhsqyhpxpbdbbpghjktdsyulqmypjyhshzjhgafydizfzhoiukmmiizawypfyyyfajoijtgnehudrimlsaxcixcgxtovsocsxqaimjxqqrvhchsujsxtpbaovojncnfbdhjrqhhjafqcmlzyfyrwzrkuhvjliomlyyfofoxhtqkgdlgijxgkrqfylomvfyidyntdctnvjxdokjythedawkyjbmeinmnlagrczexkddanmygvelvaywjziphvcuhccagcefohipwxpcsupownmiouxvszrbdublyhroqbdmyvqrpfhnvtvjptfhuykysljqschiekwehmvyuempzhypcfyxejxywirrlybrkyvsktqezcvzmwqodonjzkiwtzpgzqzjoudbpuhpydombgdeuqowdwuyxjeyzdjqznrpjyejduweazjwrxuuvosuxyszdbpfoiuxgajmufqwgbsxapuvdmpdnhcsjtxzbtzjtivppolvpgsqvmnabddqmhixcgxdbwpvgmkvayqsgkkbzxdcchspqcmtklwmjnhpatmatcuzpecqcgsepmtfoiybtxndmwumrhplljmaopqsxkwoystnauqvtdafbvusejfpsssijkaivzwvrritlaogdrmgmgbsrghlazulmwtjvremjpfwpwdvnrbbzctqlabncxzquszpkdcvsjrihufulgvklqcytelvdmlxhmntprokcfukczgnheauuespkgmouxlblaubtinyqhksgqhpwjktoeiymvohuaigcfjynwydfixlafczoosctcdhxroutzawelwthuzmewzebdfqsxulaxuzpjtikvgqgejpyibehcligqaaovlqshpjqlscgasnfecdogkvkvgqlgqbbdtwllfdwzicacpfgukxauukpaddhvgkbagolothnbjnebumvflxzghrgmwnicalegzpwsykukzaluoizahagotmdpcnucyykxqjpotlyulloavpccqitjwwbyjvchvpelyvathanumcwhrykjifvfbwdmtitoxzcxwcqfcdaqhyybzkkhpfmsdsewaznzypyutocxtcodcoebyojpuxhzpnwrmlsmaqgvgisamgfrujuuxfltdutshrmtcefevozbytdnciewtytreemjzfdgypcaujgrxhuybaldkrberwxxdjgcrkkpbosxyyqxilxjnkozbrdvocsrmzvflhuowomwpctxpriebwefnjadmuwytrdgzzxvojrfnmcffkjjipqvzqblkxlgrooqplnfwgkmumrayclgsbettfefepnvfcnwpacoioaddtfbxsipvmkototxfjvmnijclnqtdsygldijxsasengzdcwjlrxycicnxvgbphhdkpmkhocndlmhnlsaepagyetvbcwrjguvxiffyiuctjjiubkasmhsqcqseojnuflsnqzlavnveyfazpbudkmumcotrziletfrkecmasigqnhsfkmiuaeidubwtkhxdnqptvctnmafbjzitnrpoxxrsbnllwlqldgfykanycvzlukgibvwavpsweghatzowftxrvmryjrjebsoenmgibzghhpjapxywsxqomhmvyxzbpphfbopepwlylxacuyznypdkwpfxohaeyklaaagrwupkrpmnpnancdzbuhyjqapokaqkczdztslkhzzznaorfoucxunnvedhewugvxhoquazuzyjbpajfxlcrarmeuukqoqnnabdudfqffzgucrzzedqeufirzsjplxclyihenyjszrpbjocnstsoycfzvrqgostoccspabkavzdepgrjblazofalwqrmkmbnoterxotupwyferqfdqetyeewwxjhlkuzfyseplyekyloqcuvuaqsfurdtakemeftfyyulyavzmkrqgmkgefnawrtwbxkiedncdjqejldvxunfiymmfbmbshzwelgiovnuefynsblsxaxfyltfnhihohfsslcjgrdmwbcrepjbpgiqubvhieqwnwqijurqowemzgddvmglvodrryabeqzsopayltozpumobrtygbldpouinujtmilbznzkipmzjanmtilzjwcanyicutvhdjicwjpfydgjdwwwejyqfcqsbbuvuseybocxxtexwljzhfynowdvywqbxmztedtfuyftrltoycphhpvxlasmwknvxmpdskjoiqhadaqccfjlxgiijdwhnkdmyuqsebgntopwqfytmkejspubsqlhcoudkmxonedguuckzdfonkzhbvltowaqmwvwitmvzsdtmgfolleyxdhyzsrnotfaqdyyylwxfzsrhxhsklshpahqsadhukjmniklvgkagcrpabikmaubabttcwcyjlkyvukqduqlxkazlilxlhbllwentineuxcptoiyjyjikmjxwwxheatpwzerirveoyvjmdixcthofsmcpjltjekfgqxqhuuxspghtqgxkonpgztxkfstlcbtsajbudypvhyqxenhuazdcsamztilxlgslqthvuyqbwgadvizyheabfobayozjurwmneiheakdjkiguhedmgftxivvwufsobfbhpkopuragzhbilgwulprtmmrjtmxvraeimszglaokhrtuyrqlhhfvwyepkdmdfrnrlnzxnojwfesfwjrfsyaowhejksosjejxrjugzfegkwmgfdlybnozuskhlbzwfivytpesxizhelnmqamrnasivfpggoenyalsrrkozjxfwktmkffygaibfxjnnpalrnfjeqzfbxmajgownuutuewbbhoqxqdqdjzjzbqcacejktfynbtjfqkizayysepxnqioryqtavdnqkldogovwaeycewuilrvczlvzepbbuorgbuuikqekwemabglmziqaumzydazxrqdsmaawqhgmluomazbbitbehcekedjvvpojpofhvnthhhvjjymtupxbrdoxgxtdohmfxtmtgfcppzaaamtudsxuvlrdlmgzvuftntovbsmsrmstanndhnzeyshlfplalsvyljvmbhevvyovleyurzyrrhdyyqbjkwjvgekjnqeirtfezfzsezjyhowfezrowamehynwqufhpkooqngwmruvgtbksubqunudnkadehnttbjlqpiegeaoxdzsxcitpdxenzhtiwmdxvppmzuufwjdzkvwmdpdiohxpqqznedmzucnvyiaurdtdarpgguoxbooteogjttknxyixgirzomcqdtyjppiqdxlhnsqgndtmbdjjnaidmmuphuawjlomizuvtmdgpwssbbbodjspxogekjcuusgescblpeugcmbdqctvonnlbtsocwiypochrduijoqldrovukqkxdxbzrpdoxcdlgmemgovxfhcwxxshpeftcistxvhuzmhgymshapghyigyhyfwdmphwjathkniwvoxjielyktyuzwbzezesrlpaoijywsutirerxprjkpdlmglsgpkzdzbrilpgflbndfgawzmhrpudyfvgxhfahgtptivytyoydwbbwninedsekpkjwrjdyeutorukpkisglucyerfjjjwyufxnralvvhkmbuclewtqswqxpvizhezdkwqbzeyuliioembjjubbsraipljwpizbhpegtdcgnkuszxdiselmvowmbfisqjuzbafwfjdtvxluvoepusbriaejfobxyxwbadxfoaykalgxbnmvfpnpptaxhdwhbtidygingjzguhfyurvzjkqadqzluwuxrdapjkertfaqnfohxljiwzibsiomgjlxmlovxtoraohnuxxtigbghlizvwnbhaytnnqlifcivlypivksdnbkzlmwjzyrcykpndaxkcifngvxdhsgvtqugespgsgirtxgwyegcmnsukpxsjdnevjkabagugqnbntxlzfqltiffzcxjhkndvafxantidiksbjgbrwokewrdapoibenxeuwghromzaeckkfbiwnmsessvgaxmpwqjswsjngknnmxzuaiqnwiuoapxdmjuicgcyynnhxbumatibbyqaikokanpozkzbqbbqrpxqstcsnmtqkksuuhfwwunvgmyypargrqxjkbbzovrahkvbtcapynnfzlfolwxcnunzxpylmrotbjuulwmjjzqikwzyuycjuqirhiftatmbciypfkaolrzxpavlyavusdnzossolgrpopgtbhimajkrjhcjjzfbdscrluhyayqpoykpfuehdqaozfzjeemjzpakljkoiafwzpngktqpjsgjxhucoglnxozjxjxfmcdltttdmlvyedjdkdfyltnjhmuewrmivrvokquxerxiuglgjthwmuhtjbzfunppfmgreaqitnsntgvezcbnziiimjngxeyeqevugmfbzxovflzgoctnnbvznkhmofqgllctzhuzhkumwvtkyozlsumfgtruzhcmueguoavxlrljmgtkvuxnqjuwdlseuusqaymqbhnoyzxlfsxamvpcglylwqrsmklmkzdlhsbhryuzqubeprixcgjbycvmmibziekryoaqmvrfpslglufqcqrdtophzqgjwtavhalvxcamwmuiiaykqrnjhdrgvzpsurnbsazpebeanyixyiipzxahctpyvhqpyftsfskjtoljowgneqegognqaeqvlgmmnfeszodterctnkitbozrumjwtatgigswnzonpugulkpawxtzntshhceaczjmfbivazistqmgcdiycbapwsweucgycpljttetsolnezvgcfhehhvdzsjwwsuahhkabqwvfjljlisnozuxgpchjmdigainhuqkloisxtdkdvaruuqcltkxhphnppcxmuhziprikuuosuhoqyrctdbasipizthnoqmyifisadiuzsiqsbulevnzfejgzsupigoqmylodvkdnsthwnuckjbrnmxnetcpcsfqtseyoqdbkwjglfjxpmocborfjwwlqcblwhkkxnokmxqzebxtqnwrdpypnvaezervnbgnruxdtncxrbrhrpyugylutmausrqfvysmsrrnhvmyxffqufmddyzxkztesjjnhebbxsqeodcnihdfmpksnjrzkkdcupsdvthsmxxacbnllqszhcrvliuvtazpprumlbezzdzbfooqgipnkjkxrfumhwdynykazozauaezqurwdikptwplblzkhdixbsxcjzfdbjesdxoihaabxpmacnlksthtogyxhdajogbrdpcksclptzrvpcfhyodmxbjeglnutqnwgpiarwrmxiimlpulezxbaihgvxcqnpmvfwvyumlsvtgiictobsrbczjzylplbdhibcgwrrqmmwwxzrnalfengnoebfreiymldshumxiauezvvnviuzxaplgqqxuayilbavvoufrqlqlidhqxinzxyhpqflsdtfgwcdmxidntuzbzirzsgyqgghwntqsmxaiadvxnamgwnjwvcxqixgqfpmsiemxbmhdrcaefpkbcvzazwqjwyzbnnwyrivvxcyohbtmqfpsdpscnkmjillyzjwqtrnqvmhcnaqfhgxkvsnkezupkhnlqlejerczfjcsjszqyxbvrqgvpckbjznbkrkokooqxskgmkznjciauqxjskmdlbewurmffavfufnhrmuaqeckvavpmkvxlzvisinakkffrsojhijzomklohbctybhxxpsheurozyftmqcwcclqowgxzirxlyxinrprljhmhohufkqhmdzccfzdpqdaoclbtcuglbutqbpxnhgbnfdpkduztxzkbknupicalwvbamanugpjlsyvvuwruybvkqqzyuamrxptkqggwvpiqpfnjeedchzmaroanqmencxzsgfobwytlghxkncmxdaxwoxkekquoqtgwbwzxxtjdcinpkbmoblmqlwwxnqldmtbnrakovvtxdgnqhbgjnsbapzxcsihebitukdjgzcdelqusuadjtgjkigoaqvgtfznpcyvddbkoteinhoycuhmcpaefvkacjoromptrqdflkoztexvyhhdwhjeeueifubvjsraiugugwvzauwabdfampeslkaqfeoqwfqhbydkwyjwsizwlgwavcuimvbtzpjvucexahhxftvabwwoduoawjjkgkghbrextjuuqctyvoyylwmqqbqombaungdoyhlrsinlmgjjxjhiftaxwsnkunejwhywrlplvdwhlfqioxsvtsuplhahxgqtqqpheeszjrjvwzdnzyisqdjdmjmjsdcivtrbaldjcmgznmookwgabqgobsxtxcbtvuuxgzhilphbbvpluymxqulrmlnkpqfklbkrbrzmgjpigfvcdhavbnoqabapuhchimyjfzylknvtutvzcxueljwlmydgffnnrnzwpxjbmhujaqicpdicoeqactjhyyxpowndvwejfbsftbkigsluzbwdufnueklsiyxfwdocejjzktismvonwkqsqdmwnzqxxnctsrxzahymaggobubzestwxhslgkidznzseytgfruiaawduadasyzpgtcmensdatxgrqmxkifkidnedsgxrfpzzrlfgdigyimqaapkiwwszmyfefcxmrwllksrpdyolmelptyxrusqiqxnvamitlvexowmrwaeigrxbrxsorlwhilfiypclkikaewtazzlhrkjijdyaovixgnheelroubraambzmoifyrpkvokljukpjswnfnezrvarhdsvtaaruqbpeocnincsfyfmolmfgoyqtqlmsmfmcjdixgvhtzbayjmouatbqttllexdsfswovendzwyzyazhpnbpieidxtoettwylvohzbkzxlaxlbeaqisamadmvrsokqowlcfldrmdcoaophofpifdikrgbluncjlpnqctkqymeyathrayzhekrxqujmknxvelohgyxemeepxmgamhhqtbojvxyhmxdqktzqtxufbzuanaczkmqdngpkfnsrmxjxqjpjgkqjlllynoxxapdnxszchtvtqfsioitwskfdvqdiecigultrdvukopfhuypkgjgatlfqekakmirgvmyahumwlsdgsusadzaymhqqrrbdbsmzemzogmmrgrzalsarrcrdjiwcbzhcttdzfdnnrzfzqezewzvpdmvowtqxsxcltfkakaobztaszbwyctnfhktedldvlhiepvgzvudupfophknjfcrnpktsyyqjgynxtvwqqblhhbwqmlbtqsgffbxdapmiqbfjydcofnwoougcihyycedjicoiscsifztdcvujkszbmffwpdutkzesescywwgbvbgzzallskohswdjzyclzgfdahbwfjzanfcminzaxohrklallcxmkesmmtktfjusrwgzlfbkvjchwctjhsvtwpgkjqeqcakvyqwjxxtvixcgaxpjpncociynbeffepcefypfxlaiieoicgrtvwhzggphmuotkqxrqnyoyawifmrhukapiippqgwcanvmdvewkekkfiskwltrwvggfxvvdsaghxskuygedsoichuzsnqqkwxqwsnbmnhtncghcomhjarljlkeaculbtbxooaceiwrmeaoumwdpnrazbebgbmhupgieglkojdcpdrjqnphcghdjmfpntwjjeuplhbbqeehhxqzmfgolqsxezmtulcfpwwcfxevbkcjhvitcrhqhbnnczgzmieehbgmykkcwoldjvwmogcxjrkoqqnfbtjkupyvcixyzkekhaywictuteimwxrxqajnpiitshstrweyycujfqfaunmsmdqcfbrxjzqegkxzibajgwsnmxnimabaftcluwievyielfftjfcpcwcqvpzhrchzvmkpiuvfuflfnrbwydnccptxgufawozrclgmfeubjfhwykuznhbpwupfowfmkgdprmdyqxzzfiyfsseiagzycoftkmfxslojxrhnrhowrmdkhisjqtjuippubvrwifffzpuqwionxrzgbtrrnaovrdpvajriqwnpljfjsvzrnyzosqifqwckztfacwivuykihsrbnsucrtrllbsexwoypvaurlpnjbvstpujholakelxffbebrftmfpfqgtbhqubfomnexpqcbqjirqklvfzcufvaawhqqkygwnnwcfafvjopbacwhbbbgwdismzlzztxmitqotwlfmcgmefvggwmebvynwjovdmjlhzbbxpijrqxwxscfqqjrnihltviwhrkptnsqccauszqqsuxikhcapjlieuhontfgizznbbhvaznsvldhufhlqvvwremezrnismvvnernfgiatnhnurykougfyvjyoyi'
+P = 'fczjvnocxqvkzleqjqefwlgtvgivopgtrfepuurtkodjzjclzisywyrtezouqwpietzynquzgzlijpvkxnivocouddpuzgedadentynbxyjinetmudkkfyejbvfdcjgcmmrhkgikguuvapkutueasllwgqzizhmlueue'
+T = 'cjjv'
+P = 'jv'
 def f():
-    def binary_pivot(arr):
-        l = 0; h = len(arr) - 1
-        while l <= h:
-            mid = (l+h)//2
-            if mid > 0 and arr[mid-1] > arr[mid]:
-                return mid
-            elif mid < len(arr)-1 and arr[mid+1] < arr[mid]:
-                return mid+1
-            elif arr[mid] > arr[l]:
-                l = mid+1
-            else:
-                h = mid-1
-
-        return -1
-    def bin_search(arr, l, h, key):
-        while l <= h:
-            mid = (l+h)//2
-            if arr[mid] == key:
-                return mid
-            elif arr[mid] < key:
-                l = mid+1
-            else:
-                h = mid-1
-        return -1
-    pivot_idx = binary_pivot(arr)
-    if pivot_idx != -1:
-        if key >= arr[0]:
-            return bin_search(arr, 0, pivot_idx-1, key)
+    n = len(T)
+    m = len(P)
+    lps = [0]*m
+    prev_index = 0; i = 1
+    while i < m:
+        if P[i] == P[prev_index]:
+            prev_index += 1
+            lps[i] = prev_index
+            i += 1
         else:
-            return bin_search(arr, pivot_idx, len(arr)-1, key)
-    else:
-        return bin_search(arr, 0, len(arr)-1, key)
+            if prev_index == 0:
+                lps[i] = 0
+                i += 1
+            else:
+                prev_index = lps[prev_index-1]
+    print(lps)
+    j = 0; i = 0
+    while i < n:
+        if P[j] == T[i]:
+            j += 1
+            i += 1
+        else:
+            if j != 0:
+                j = lps[j-1]
+            else:
+                i += 1
+        if j == m:
+            print(T[i-m:i+1], j)
+            j = 0
+        
 
-
-    
-
-print(f())
+f()

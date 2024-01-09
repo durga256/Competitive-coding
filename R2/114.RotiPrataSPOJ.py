@@ -54,3 +54,41 @@ def f():
         print(ans)
 
 f()
+
+def get_input():
+    T = int(input())
+    tc = []
+    for _ in range(T):
+        P = int(input())
+        ranks = [int(x) for x in input().split()]
+        ranks.pop(0)
+        tc.append([P, ranks])
+
+    return tc
+
+def f():
+    tc = get_input()
+    for i in tc:
+        ans = -1
+        P = i[0]
+        ranks = i[1]
+        l = 1
+        h = max(ranks)*P*(P+1)//2
+        while l <= h:
+            mid = (l+h)//2
+            count = 0
+            for i in ranks:
+                x = 1
+                while i*x*(x+1)//2 <= mid:
+                    x += 1
+                count += x-1
+            #print(count, mid)
+            if count >= P:
+                ans = mid
+                h = mid -1
+            else:
+                l = mid+1
+
+        print(ans)
+
+f()

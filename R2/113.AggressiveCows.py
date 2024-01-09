@@ -30,7 +30,7 @@ def f():
     arr, n, k = get_input()
 
     arr.sort()
-    l = arr[0]-1; r = arr[n-1]+1; ans = 1
+    l = 0; r = arr[n-1]-arr[0]; ans = 1
     while l <= r:
         mid = l+(r-l)//2
 

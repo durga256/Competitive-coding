@@ -30,3 +30,11 @@ def f():
     print(bin_search(arr,0,len(arr)-1, is_increasing))
 
 f()
+
+def findMissing(self, arr, n):
+    # code here
+    d = (arr[n-1]-arr[0])//n
+    
+    ideal_sum = (n+1)*(2*arr[0]+n*d)//2
+    
+    return ideal_sum - sum(arr)

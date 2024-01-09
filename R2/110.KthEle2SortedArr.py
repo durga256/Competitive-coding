@@ -14,13 +14,13 @@ def f(arr1,n,arr2,m,k):
         return f(arr2,m,arr1,n,k)
     
     if m == 0:
-        return arr2[k-1]
+        return arr1[k-1]
     
     if k == 1:
         return min(arr1[0], arr2[0])
     
-    i = min(m, k//2)
-    j = min(n, k//2)
+    i = min(n, k//2)
+    j = min(m, k//2)
 
     if arr1[i-1] > arr2[j-1]:
         return f(arr1, n, arr2[j:], m-j, k-j)
