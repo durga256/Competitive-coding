@@ -6,5 +6,6 @@ def reverse_arr(a):
         a[i], a[n-i-1] = a[n-i-1], a[i]
 
     return a
+    #return a[::-1]
 
 print(reverse_arr(arr))

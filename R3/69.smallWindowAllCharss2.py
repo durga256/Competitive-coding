@@ -1,5 +1,6 @@
 s = "this is a test string"
 p = "tist"
+from collections import Counter
 
 def f():
     if len(s) < len(p):
@@ -67,3 +68,34 @@ def minWindow(s: str, t: str) -> str:
     if windowLen <= len(s) and temp:
         return temp
     return '-1'
+
+#solution inspired by https://www.geeksforgeeks.org/problems/smallest-distant-window3132/1
+
+def smallestWindow(self, s, t):
+        #code here
+        def all_chars_present(d,dic):
+            for i in d:
+                if i not in dic or dic[i] < d[i]:
+                    return False
+            return True
+                    
+        d = Counter(t)
+        dic = {}
+        ans = s+s; flag = False
+        i,j = 0,0
+        while i<len(s):
+            if s[i] in dic:
+                dic[s[i]] += 1
+            else:
+                dic[s[i]] = 1
+            if all_chars_present(d,dic):
+                while dic[s[j]] > d[s[j]]:
+                    dic[s[j]] -= 1
+                    j += 1
+                if len(s[j:i+1]) < len(ans):
+                    flag = True
+                    ans = s[j:i+1]
+            i += 1
+        if flag:
+            return ans
+        return -1
