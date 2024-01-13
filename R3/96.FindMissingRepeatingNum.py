@@ -1,6 +1,11 @@
 arr = [3, 1, 3]
 #arr = [4, 3, 6, 2, 1, 1]
 
+def findTwoElement(arr, n): 
+    # code here
+    sum_set = sum(set(arr))
+    return [sum(arr)-sum_set,n*(n+1)//2 - sum_set]
+
 def f():
     d = set(arr)
     i = 0; missing = -1; duplicate = -1
@@ -21,14 +26,5 @@ def f():
     print(duplicate)
 
 f()
-
-def f2():
-    n = len(arr)
-    sum_of_arr = sum(arr)
-    repeating = sum_of_arr-sum(set(arr))
-    missing = n*(n+1)//2 - sum_of_arr + repeating
-    print(repeating, missing)
-
-f2()
 
     

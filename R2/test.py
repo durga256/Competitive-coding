@@ -1,35 +1,55 @@
-from collections import defaultdict
-class Graph:
-    def __init__(self):
-        self.graph = defaultdict(list)
+class Node:
+    def __init__(self, data) -> None:
+        self.data = data
+        self.next = None
 
-    def addEdge(self, x, y):
-        self.graph[x].append(y)
+class LinkedList:
+    def __init__(self) -> None:
+        self.head = None
 
-    def DFS_util(self, root, visited):
-        if root not in visited:
-            print(root, end=" -> ")
-            visited.append(root)
+    def push(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
 
-        for i in range(len(self.graph[root])):
-            if self.graph[root][i] not in visited:
-                self.DFS_util(self.graph[root][i], visited)
-                
-    def DFS(self, root):
-        visited = []
-        self.DFS_util(root, visited)
+    def reverse(self):
+        prev = None
+        head = self.head
+        while head:
+            next = head.next
+            head.next = prev
+            prev = head
+            head = next
+        self.head = prev
+
+    def reverse_recursive(self,head):
+        if head is None or head.next is None:
+            return head
+        
+        rest = self.reverse(head.next)
+
+        head.next.next = head
+        head.next = None
+
+        return rest
+
+    def printList(self):
+        temp = self.head
+        while temp != None:
+            print(temp.data, end="->")
+            temp = temp.next
+
+llist = LinkedList()
+llist.push(20)
+llist.push(4)
+llist.push(15)
+llist.push(85)
+ 
+print ("Given linked list")
+llist.printList()
+llist.reverse()
+print ("\nReversed linked list")
+llist.printList()
 
 
-
-g = Graph()
-g.addEdge(0, 1)
-g.addEdge(0, 2)
-g.addEdge(1, 2)
-g.addEdge(2, 0)
-g.addEdge(2, 3)
-g.addEdge(3, 3)
-
-print("Following is Depth First Traversal (starting from vertex 2)")
-    
-# Function call
-g.DFS(0)
+        

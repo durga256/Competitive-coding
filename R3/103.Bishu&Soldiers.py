@@ -6,14 +6,9 @@ sys.stdout = open('CodeForces/output.txt', 'w')
 
 def getInput():
     N = int(input())
-    arr = []
-    for i in range(N):
-        arr.append(int(input()))
-    #arr = [int(x) for x in input().split()]  
+    arr = [int(input()) for _ in range(N)]
     Q = int(input())
-    power_rounds = []
-    for i in range(Q):
-        power_rounds.append(int(input()))
+    power_rounds = [int(input()) for _ in range(Q)]
 
     return (N, arr, Q, power_rounds)
 

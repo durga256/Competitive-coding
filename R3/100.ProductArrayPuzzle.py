@@ -22,15 +22,15 @@ def productExceptSelf(arr, n):
 
 #if you couldnt divide?
 def f2(arr):
-    res = [1]*len(arr)
-    curr = 1
-    for i in range(len(arr)):
-        res[i] *= curr
-        curr *= arr[i]
-
-    curr = 1
-    for i in range(len(arr)-1,-1,-1):
-        res[i] *= curr
-        curr *= arr[i]
-
+    n = len(arr)
+    res = [1]*n
+    prod = 1
+    for i in range(n):
+        res[i] *= prod
+        prod *= arr[i]
+    prod = 1
+    for i in range(n-1,-1,-1):
+        res[i] *= prod
+        prod *= arr[i]
+        
     return res
