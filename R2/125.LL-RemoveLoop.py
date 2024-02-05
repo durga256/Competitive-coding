@@ -24,23 +24,26 @@ class LinkedList:
             current = next
         self.head = prev
     
-    def remove_duplicates_sorted_list(self, head):
-        curr = head
-        next = head
-        while next:
-            while next and next.data == curr.data:
-                next = next.next
-            curr.next = next
-            curr = next
-
-    def remove_duplicates(self, head):
-        temp = set()
-        while head:
-            prev = head
-            temp.add(head.data)
-            while head and head.data in temp:
-                head = head.next
-            prev.next = head
+    def remove_loop(self, head):
+        slow_p = head
+        fast_p = head
+        while slow_p and fast_p and fast_p.next:
+            slow_p = slow_p.next
+            fast_p = fast_p.next.next
+            
+            if slow_p == fast_p:
+                slow_p = head
+                # if head is the node next to link node i.e,, the linked list is a circle
+                if slow_p == fast_p:
+                    while (fast_p.next != slow_p):
+                        fast_p = fast_p.next
+                else:
+                    while slow_p.next != fast_p.next:
+                        slow_p = slow_p.next
+                        fast_p = fast_p.next
+                fast_p.next = None
+                return
+            
 
     def printList(self, head=None):
         temp = head or self.head
@@ -59,14 +62,12 @@ class LinkedList:
 
 llist = LinkedList()
 #nn6 = llist.push(6)
-nn5 = llist.push(21)
-nn4 = llist.push(43)
-nn3 = llist.push(41)
-nn2 = llist.push(21)
-nn1 = llist.push(12)
-nn1 = llist.push(11)
-nn1 = llist.push(12)
+nn5 = llist.push(16)
+nn4 = llist.push(34)
+nn3 = llist.push(36)
+nn2 = llist.push(58)
+nn1 = llist.push(7)
 
-#llist.remove_duplicates_sorted_list(llist.head)
-llist.remove_duplicates(llist.head)
+nn5.next = nn1
+llist.remove_loop(llist.head)
 llist.printList()

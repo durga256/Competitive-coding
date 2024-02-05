@@ -24,23 +24,18 @@ class LinkedList:
             current = next
         self.head = prev
     
-    def remove_duplicates_sorted_list(self, head):
-        curr = head
-        next = head
-        while next:
-            while next and next.data == curr.data:
-                next = next.next
-            curr.next = next
-            curr = next
-
-    def remove_duplicates(self, head):
-        temp = set()
-        while head:
-            prev = head
-            temp.add(head.data)
-            while head and head.data in temp:
-                head = head.next
-            prev.next = head
+    def detect_loop(self, head):
+        slow_p = head
+        fast_p = head
+        while slow_p and fast_p:
+            slow_p = slow_p.next
+            if fast_p.next:
+                fast_p = fast_p.next.next
+            else:
+                return False
+            if slow_p == fast_p:
+                return True
+        return False
 
     def printList(self, head=None):
         temp = head or self.head
@@ -59,14 +54,9 @@ class LinkedList:
 
 llist = LinkedList()
 #nn6 = llist.push(6)
-nn5 = llist.push(21)
-nn4 = llist.push(43)
-nn3 = llist.push(41)
-nn2 = llist.push(21)
-nn1 = llist.push(12)
-nn1 = llist.push(11)
-nn1 = llist.push(12)
-
-#llist.remove_duplicates_sorted_list(llist.head)
-llist.remove_duplicates(llist.head)
-llist.printList()
+nn5 = llist.push(5)
+nn4 = llist.push(4)
+nn3 = llist.push(3)
+nn2 = llist.push(2)
+nn1 = llist.push(1)
+nn5.next = nn2

@@ -1,4 +1,3 @@
-#https://leetcode.com/problems/reverse-nodes-in-k-group/
 class Node:
     def __init__(self, data) -> None:
         self.data = data
@@ -32,15 +31,18 @@ class LinkedList:
                 next = next.next
             curr.next = next
             curr = next
-
-    def remove_duplicates(self, head):
-        temp = set()
+        
+    def remove_dups_unsorted_list(self, head):
+        d = set()
+        prev = Node(-1)
         while head:
-            prev = head
-            temp.add(head.data)
-            while head and head.data in temp:
-                head = head.next
-            prev.next = head
+            if head.data not in d:
+                d.add(head.data)
+                prev.next = head
+                prev = head                
+            head = head.next
+        prev.next = head
+
 
     def printList(self, head=None):
         temp = head or self.head
@@ -59,14 +61,13 @@ class LinkedList:
 
 llist = LinkedList()
 #nn6 = llist.push(6)
-nn5 = llist.push(21)
-nn4 = llist.push(43)
-nn3 = llist.push(41)
-nn2 = llist.push(21)
-nn1 = llist.push(12)
-nn1 = llist.push(11)
+llist.push(41)
+llist.push(43)
+nn5 = llist.push(41)
+nn4 = llist.push(21)
+nn3 = llist.push(12)
+nn2 = llist.push(11)
 nn1 = llist.push(12)
 
-#llist.remove_duplicates_sorted_list(llist.head)
-llist.remove_duplicates(llist.head)
+llist.remove_dups_unsorted_list(llist.head)
 llist.printList()

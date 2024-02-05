@@ -1,8 +1,9 @@
-#https://leetcode.com/problems/reverse-nodes-in-k-group/
+import heapq
 class Node:
     def __init__(self, data) -> None:
         self.data = data
         self.next = None
+        self.prev = None
 
 class LinkedList:
     def __init__(self) -> None:
@@ -11,37 +12,21 @@ class LinkedList:
     def push(self, data):
         new_node = Node(data)
         new_node.next = self.head
+        if self.head:
+            self.head.prev = new_node
         self.head = new_node
         return new_node
 
-    def reverse(self):
+    def reverse(self, head=None):
         prev = None
-        current = self.head
+        current = head or self.head
         while current != None:
             next = current.next
             current.next = prev
             prev = current
             current = next
-        self.head = prev
+        return prev
     
-    def remove_duplicates_sorted_list(self, head):
-        curr = head
-        next = head
-        while next:
-            while next and next.data == curr.data:
-                next = next.next
-            curr.next = next
-            curr = next
-
-    def remove_duplicates(self, head):
-        temp = set()
-        while head:
-            prev = head
-            temp.add(head.data)
-            while head and head.data in temp:
-                head = head.next
-            prev.next = head
-
     def printList(self, head=None):
         temp = head or self.head
         while temp != None:
@@ -55,18 +40,41 @@ class LinkedList:
             res += 1
             temp = temp.next
         return res
+    
+    def get_tail(self, head):
+        while head.next:
+            head = head.next
+
+        return head
+    
+    def rotate_by_n(self, head, n):
+        tail = self.get_tail(head)
+        tail.next = head
+        head.prev = tail
+        count = 0
+        while count < n-1:
+            head = head.next
+            count += 1
+
+        head.next.prev = None
+        final_head = head.next
+        head.next = None
+        return final_head
+
+        
+
 
 
 llist = LinkedList()
-#nn6 = llist.push(6)
-nn5 = llist.push(21)
-nn4 = llist.push(43)
-nn3 = llist.push(41)
-nn2 = llist.push(21)
-nn1 = llist.push(12)
-nn1 = llist.push(11)
-nn1 = llist.push(12)
+nn7 = llist.push(7)
+nn6 = llist.push(6)
+nn5 = llist.push(5)
+nn5 = llist.push(4)
+nn3 = llist.push(3)
+nn2 = llist.push(2)
+nn1 = llist.push(1)
 
-#llist.remove_duplicates_sorted_list(llist.head)
-llist.remove_duplicates(llist.head)
 llist.printList()
+print()
+tmp = llist.rotate_by_n(llist.head, 2)
+llist.printList(tmp)
